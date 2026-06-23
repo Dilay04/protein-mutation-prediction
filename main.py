@@ -2,8 +2,7 @@ import pandas as pd
 import numpy as np
 from xgboost import XGBClassifier
 from src.utils import get_stratified_folds, evaluate_predictions, SEED
-# Yarın yazacağımız özellik mühendisliği fonksiyonunu şimdiden import edebiliriz:
-# from src.features import engineer_all_features 
+from src.features import engineer_all_features 
 
 DATA_PATH = "data/raw/YARISMA_TRAIN_MASTER.csv"
 TARGET_COL = "Label"
@@ -18,7 +17,7 @@ def main():
         print("\nLabel distribution:")
         print(df[TARGET_COL].value_counts()) # Beklenen: 2149 P / 782 B
         
-        # --- ÖZELLİK MÜHENDİSLİĞİ KATMANI (Yarın Burayı Aktif Edeceğiz) ---
+        # --- ÖZELLİK MÜHENDİSLİĞİ KATMANI -
         # df = engineer_all_features(df)
         
         # --- VERİ HAZIRLIĞI ---
